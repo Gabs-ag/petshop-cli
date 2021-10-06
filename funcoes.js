@@ -42,10 +42,10 @@ module.exports = {
         fs.writeFileSync('./database/cachorros.json', JSON.stringify(cachorros))
     },
 
-     vacinar: function (pos, nomeDaVacina){
+    vacinar: function (pos, nomeDaVacina) {
 
         // Verificar se existe um cachorro na posição passada.
-        if(pos >= cachorros.length || pos < 0){
+        if (pos >= cachorros.length || pos < 0) {
             console.log("Cachorro inexistente");
             return;
         }
@@ -53,15 +53,45 @@ module.exports = {
         // Criar um objeto literal com as informações da vacina
         let novaVacina = {
             nome: nomeDaVacina,
-            data: (new Date()).toISOString().substr(0,10)
+            data: (new Date()).toISOString().substr(0, 10)
         }
 
         // Adicionar esse Objeto literal ao array de vacinas do cachorro
         cachorros[pos].vacinas.push(novaVacina);
 
         // Salvar o array de cachorros no arquivo
-        fs.writeFileSync('./database/cachorros.json', JSON.stringify(cachorros,null,4));
+        fs.writeFileSync('./database/cachorros.json', JSON.stringify(cachorros, null, 4));
+    },
+
+    //serviços
+    atribuirServico(pos, $servico) {
+        if (pos >= cachorros.length) {
+            console.error('Animal Não Cadastrado')
+            return
+        }
+
+        let servicos = {
+            servico: $servico
+        }
+
+        cachorros[pos].servicos.push(servicos)
+        fs.writeFileSync('./database/cachorros.json', JSON.stringify(cachorros))
+    },
+    //remover
+    remover(pos) {
+        if (pos >= cachorros.length) {
+            console.error('Animal Inexistente')
+            return
+        }
+
+        delete cachorros[pos]
+        fs.writeFileSync('./database/cachorros.json', JSON.stringify(cachorros))
+        console.log('Animal Deletado Com Sucesso')
     }
 
 }
-     
+
+
+
+
+
