@@ -42,7 +42,7 @@ Construindo funções no arquivo funcoes.js
   . Essa função deve imprimir uma mensagem "Cachorro inexistente"
     caso a posição passada não possua nenhum cachorro cadastrado.
 
-☐ Crie uma função chamada atribuirServico
+✔ Crie uma função chamada atribuirServico @done(21-10-05 23:02)
   . Essa função deve adicionar um serviço ao array de serviços
     de um cachorro
   . Ela deve receber dois parâmetros *nesta ordem*
@@ -52,7 +52,7 @@ Construindo funções no arquivo funcoes.js
   . Essa função deve imprimir uma mensagem "Cachorro inexistente"
     caso a posição passada não possua nenhum cachorro cadastrado.
 
-☐  Crie uma função chamada remover
+✔  Crie uma função chamada remover @done(21-10-05 23:02)
   . Essa função deve remover um cachorro do array de serviços.
   . Ela deve recber um único parâmetro
     + pos (a posição do cachorro no array)

@@ -5,6 +5,7 @@ module.exports = {
     listar: function () {
         console.table(cachorros)
     },
+
     descrever: function (pos) {
         if (pos >= cachorros.length || pos < 0) {
             console.error("Cachorro inexistente")
@@ -63,7 +64,6 @@ module.exports = {
         fs.writeFileSync('./database/cachorros.json', JSON.stringify(cachorros, null, 4));
     },
 
-    //serviços
     atribuirServico(pos, $servico) {
         if (pos >= cachorros.length) {
             console.error('Animal Não Cadastrado')
@@ -77,7 +77,7 @@ module.exports = {
         cachorros[pos].servicos.push(servicos)
         fs.writeFileSync('./database/cachorros.json', JSON.stringify(cachorros))
     },
-    //remover
+
     remover(pos) {
         if (pos >= cachorros.length) {
             console.error('Animal Inexistente')
